@@ -16,7 +16,7 @@
   
 # Features ✔️
 - It is responsive! You can use it in all your devices (or just resize the page to see it 😄)
-- A type search system where you can find the pokemons by their type
+- A type search system where you can find the pokemons by their type (if you click/touch the button again, it will go back to show all the pokemons)
 - A search bar, where you can search the pokemons by their name
 - A modal to show more details about an specific pokemon like the weaknesses, candys, spawn times, etc
 
