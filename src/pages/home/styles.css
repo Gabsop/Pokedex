@@ -202,7 +202,19 @@ hr {
   border: 1px solid #6c6c6c;
 }
 
-@media only screen and (max-width: 1038px) {
+.loading-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.loading {
+  width: 250px;
+  height: 250px;
+}
+
+@media only screen and (min-width: 1038px) {
   .type-list {
     grid-template-columns: repeat(8, 120px);
   }
@@ -216,7 +228,7 @@ hr {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 750px) and (max-width: 1038px) {
   .type-list {
     grid-template-columns: repeat(6, 120px);
   }
@@ -241,7 +253,7 @@ hr {
   }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 600px) and (max-width: 750px) {
   header input {
     height: 50px;
     width: 350px;
@@ -249,6 +261,10 @@ hr {
   header h1 {
     padding: 10px 30px;
     font-size: 25px;
+  }
+
+  header .search-img {
+    left: 145px;
   }
 
   .type-list {
@@ -266,7 +282,55 @@ hr {
   }
 
   .pokemon-list {
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  .pokemon-list .no-pokemons {
+    height: 200px;
+    width: 300px;
+    margin: -15px 0 15px -150px;
+  }
+
+  .pokemon-list .no-pokemons img {
+    height: 110px;
+    width: 150px;
+  }
+
+  .pokemon-list .no-pokemons h2 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 600px) {
+  header input {
+    height: 50px;
+    width: 350px;
+  }
+  header h1 {
+    padding: 10px 30px;
+    font-size: 25px;
+  }
+
+  header .search-img {
+    left: 145px;
+  }
+
+  .type-list {
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(8, 50px);
+  }
+
+  .type-button#Dark {
+    grid-row: 6;
+    grid-column: 1;
+  }
+
+  .type-button#Shadow {
+    grid-column: 1;
+  }
+
+  .pokemon-list {
+    grid-template-columns: repeat(2, 190px);
   }
 
   .pokemon-list .no-pokemons {
@@ -286,7 +350,45 @@ hr {
 }
 
 @media only screen and (max-width: 375px) {
+  header input {
+    height: 50px;
+    width: 270px;
+  }
+  header h1 {
+    padding: 10px 30px;
+    font-size: 25px;
+  }
+
+  header .search-img {
+    left: 110px;
+  }
+
+  .type-list {
+    grid-template-columns: repeat(2, 120px);
+    grid-template-rows: repeat(8, 50px);
+  }
+
+  .type-button#Dark {
+    grid-row: 9;
+    grid-column: 1;
+  }
+
   .pokemon-list {
-    grid-template-columns: repeat(2, 190px);
+    grid-template-columns: repeat(2, 160px);
+  }
+
+  .pokemon-list .no-pokemons {
+    height: 200px;
+    width: 300px;
+    margin: -15px 0 15px -150px;
+  }
+
+  .pokemon-list .no-pokemons img {
+    height: 110px;
+    width: 150px;
+  }
+
+  .pokemon-list .no-pokemons h2 {
+    font-size: 20px;
   }
 }

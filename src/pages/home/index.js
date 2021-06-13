@@ -3,6 +3,7 @@ import Logo from "../../assets/logo.png";
 import Search from "../../assets/search.png";
 import Pokeball from "../../assets/pokeball.png";
 import NotFound from "../../assets/not-found.png";
+import LoadingGif from "../../assets/loading.gif";
 
 import axios from "axios";
 import { useState, useEffect, useMemo } from "react";
@@ -14,24 +15,39 @@ const Home = () => {
   const [type, setType] = useState("");
   const [search, setSearch] = useState("");
   const [selectedPokemon, setSelectedPokemon] = useState("");
+  const [loading, setLoading] = useState(true);
 
-  const getPokemons = async () => {
-    try {
-      axios
-        .get(
-          "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json"
-        )
-        .then(function (response) {
-          setPokemons(response.data.pokemon);
-        });
-    } catch (error) {
-      console.log(error);
-    }
+  const getPokemons = () => {
+    axios
+      .get(
+        "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json"
+      )
+      .then((response) => {
+        setPokemons(response.data.pokemon);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   useEffect(() => {
     getPokemons();
   }, []);
+
+  useEffect(() => {
+    const makeLoading = async () => {
+      setLoading(true);
+
+      await new Promise((resolved) => setTimeout(resolved, 500));
+
+      setLoading(false);
+    };
+
+    makeLoading();
+  }, [type, pokemons, search]);
 
   const displayPokemons = useMemo(() => {
     return pokemons
@@ -61,7 +77,8 @@ const Home = () => {
           weight={pokemon.weight}
         />
       ));
-  }, [type, pokemons, search]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading]);
 
   const typeSelect = (selectedType) => {
     if (selectedType === type) {
@@ -275,16 +292,26 @@ const Home = () => {
         </div>
       </div>
       <hr />
-      <div className="pokemon-list">
-        {displayPokemons.length ? (
-          displayPokemons
-        ) : (
-          <div className="no-pokemons">
-            <img className="not-found" src={NotFound} alt="Pokemon Not Found" />{" "}
-            <h2>404 - Pokemon not found</h2>
-          </div>
-        )}
-      </div>
+      {loading ? (
+        <div className="loading-container">
+          <img className="loading" src={LoadingGif} alt="Loading" />
+        </div>
+      ) : (
+        <div className="pokemon-list">
+          {displayPokemons.length ? (
+            displayPokemons
+          ) : (
+            <div className="no-pokemons">
+              <img
+                className="not-found"
+                src={NotFound}
+                alt="Pokemon Not Found"
+              />
+              <h2>404 - Pokemon not found</h2>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

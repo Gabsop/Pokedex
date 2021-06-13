@@ -32,7 +32,7 @@ h5 {
   padding: 1px 0;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 425px) and (max-width: 750px) {
   .card {
     height: 170px;
     width: 170px;
@@ -59,9 +59,56 @@ h5 {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (min-width: 375px) and (max-width: 425px) {
   .card {
     height: 165px;
     width: 165px;
+  }
+
+  .image-container {
+    justify-self: center;
+    align-self: center;
+    width: 80px;
+    height: 80px;
+  }
+
+  .image-container img {
+    width: 80px;
+    height: 80px;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+  h5 {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .card {
+    height: 140px;
+    width: 140px;
+  }
+
+  .image-container {
+    justify-self: center;
+    align-self: center;
+    width: 55px;
+    height: 55px;
+  }
+
+  .image-container img {
+    width: 55px;
+    height: 55px;
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+
+  h5 {
+    font-size: 12px;
   }
 }

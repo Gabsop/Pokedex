@@ -121,7 +121,7 @@ h5.subtitle {
   grid-column: 3;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 710px) and (max-width: 1038px) {
   .modal {
     height: 280px;
     width: 650px;
@@ -168,7 +168,7 @@ h5.subtitle {
   }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 365px) and (max-width: 710px) {
   .modal {
     height: 230px;
     width: 350px;
@@ -214,6 +214,111 @@ h5.subtitle {
     width: 110px;
     height: 90px;
     margin-top: -100px;
+  }
+
+  .card-modal.card-type b {
+    font-size: 12px;
+  }
+
+  .type .type-card {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .type .type-card .types {
+    margin: 3px;
+    width: 80px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .card-modal.card-type .atributes.type {
+    margin-bottom: 10px;
+    width: 80px;
+  }
+
+  .modal h5 {
+    font-size: 11px;
+  }
+  .modal h3 {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 365px) {
+  .modal {
+    height: 350px;
+    width: 300px;
+  }
+
+  .card-modal {
+    height: 120px;
+    width: 120px;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .card-modal .image-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card-modal .image-container img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card-modal.card-info {
+    column-gap: 10px;
+    grid-template-columns: repeat(2, 20px);
+    grid-template-rows: repeat(4, 90px);
+
+    width: 150px;
+    height: 330px;
+    margin: 10px 0px;
+    padding: 10px;
+  }
+
+  .card-modal.card-info .atributes.candy {
+    grid-row: 1;
+    grid-column: 3;
+  }
+
+  .card-modal.card-info .atributes.egg {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .card-modal.card-info .atributes.spawn {
+    grid-row: 1 / 4;
+    grid-column: 1;
+    align-self: end;
+  }
+
+  .card-modal.card-info .atributes.multipliers {
+    grid-row: 2;
+    grid-column: 3;
+    align-self: center;
+  }
+
+  .card-modal.card-info .atributes.weaknessess {
+    grid-row: 3;
+    grid-column: 3;
+  }
+
+  .card-modal.card-info b {
+    font-size: 12px;
+  }
+
+  .card-modal.card-info h5 {
+    font-size: 11px;
+  }
+
+  .card-modal.card-type {
+    width: 120px;
+    height: 200px;
+    margin-top: -210px;
   }
 
   .card-modal.card-type b {
