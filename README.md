@@ -15,6 +15,7 @@
 ![image](https://github.com/Gabsop/Pokedex/blob/main/public/screenshots/img4.png)
   
 # Features ✔️
+- It is responsive! You can use it in all your devices (or just resize the page to see it 😄)
 - A type search system where you can find the pokemons by their type
 - A search bar, where you can search the pokemons by their name
 - A modal to show more details about an specific pokemon like the weaknesses, candys, spawn times, etc
