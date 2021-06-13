@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">This is a Pokedex that I made to learn more about React!<p>
-<p align="center"><a href="https://pokedexgabsop.netlify.app/">Click here to see the application running!</a><p>
+<p align="center"><a href="https://pokedexgabsop.netlify.app/" target="_blank">Click here to see the application running!</a><p>
 
 # Pages 👨‍💻
 
